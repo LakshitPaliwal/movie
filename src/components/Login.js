@@ -1,53 +1,27 @@
 import styled from "styled-components";
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
+import img1 from '../images/cta-logo-one.svg';
+import img2 from '../images/cta-logo-two.png';
+import bgImg from '../images/login-background.jpg';
 
-
-const useStyles = makeStyles((theme) => ({
-    root: {       
-        fontWeight:'bold',
-        color: '#f9f9f9',
-        fontSize: 18,
-        marginBottom:'12px',
-        padding: '16.5px 0',
-        border: '1px solid',
-        lineHeight: 1.5,
-        letterSpacing:'1.5px',
-        backgroundColor: '#0063e5',
-        borderColor: '#0063cc',
-       
-        '&:hover': {
-          backgroundColor: '#0483ee',
-          borderColor: '#0483ee',
-          boxShadow: 'none',
-        },
-}}));
 
 const Login = (props) => {
-    const classes = useStyles();
-
-    return (
-        <Container>
-            <Content>
-                <CTA>
-                    <CTALogoOne src="/images/cta-logo-one.svg" alt="" />
-                       
-                        <Button className={classes.root}  >
-                            Watch For Free
-                        </Button>
-
-
-                    <Description>
-                        Get Premier Access to Raya and the Last Dragon for an additional fee
-                        with a Disney+ subscription. As of 03/26/21, the price of Disney+
-                        and The Disney Bundle will increase by $1.
-                    </Description>
-                    <CTALogoTwo src="/images/cta-logo-two.png" alt="" />
-                </CTA>
-                <BgImage />
-            </Content>
-        </Container>
-    );
+  return (
+    <Container>
+      <Content>
+        <CTA>
+          <CTALogoOne src={img1} alt="" />
+          <SignUp>GET ALL THERE</SignUp>
+          <Description>
+            Get Premier Access to Raya and the Last Dragon for an additional fee
+            with a Disney+ subscription. As of 03/26/21, the price of Disney+
+            and The Disney Bundle will increase by $1.
+          </Description>
+          <CTALogoTwo src={img2} alt="" />
+        </CTA>
+        <BgImage />
+      </Content>
+    </Container>
+  );
 };
 
 const Container = styled.section`
@@ -77,7 +51,7 @@ const BgImage = styled.div`
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("/images/login-background.jpg");
+  background-image: url(${bgImg});
   position: absolute;
   top: 0;
   right: 0;
@@ -90,14 +64,29 @@ const CTA = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-`;
-
+`
 const CTALogoOne = styled.img`
   margin-bottom: 12px;
   max-width: 600px;
   min-height: 1px;
   display: block;
   width: 100%;
+`;
+
+const SignUp = styled.a`
+  font-weight: bold;
+  color: #f9f9f9;
+  background-color: #0063e5;
+  margin-bottom: 12px;
+  width: 100%;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  padding: 16.5px 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  &:hover {
+    background-color: #0483ee;
+  }
 `;
 
 const Description = styled.p`
