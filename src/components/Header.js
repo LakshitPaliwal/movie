@@ -48,7 +48,7 @@
 //     title: {
 //         flexGrow: 1,
 //     }, 
-   
+
 //     appBar: {
 //         transition: theme.transitions.create(['margin', 'width'], {
 //             easing: theme.transitions.easing.sharp,
@@ -206,7 +206,7 @@ import {
 } from "../features/user/userSlice";
 
 import logo from '../images/logo.svg';
-import {Search,Add,Home,Star,Theaters,LiveTv} from '@material-ui/icons';
+import { Search, Add, Home, Star, Theaters, LiveTv } from '@material-ui/icons';
 
 
 const Header = (props) => {
@@ -258,7 +258,9 @@ const Header = (props) => {
   return (
     <Nav>
       <Logo>
-        <img src={logo} alt="" />
+        <Link to='/'>
+          <img src={logo} alt="" />
+        </Link>
       </Logo>
 
       {!userName ? (
@@ -267,28 +269,28 @@ const Header = (props) => {
         <>
           <NavMenu>
             <Link to="/home">
-                <Home/>
-                <span>HOME</span>
+              <Home />
+              <span>HOME</span>
             </Link>
             <Link to="/home">
               {/* <img src="/images/search-icon.svg" alt="SEARCH" /> */}
-              <Search/>
+              <Search />
               <span>SEARCH</span>
             </Link>
             <Link >
-                <Add/>
+              <Add />
               <span>WATCHLIST</span>
             </Link>
             <Link to="/home">
-                <Star/>
+              <Star />
               <span>ORIGINALS</span>
             </Link>
             <Link to="/home">
-                <Theaters/>
+              <Theaters />
               <span>MOVIES</span>
             </Link>
             <Link to="/home">
-                <LiveTv/>
+              <LiveTv />
               <span>SERIES</span>
             </Link>
           </NavMenu>

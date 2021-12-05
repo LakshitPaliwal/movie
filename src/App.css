@@ -6,3 +6,8 @@
     rgb(0 0 0 / 73%) 0px 16px 10px -10px;
   cursor: pointer;
 }
+.img404{
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  margin-top: 7vh;
+}
