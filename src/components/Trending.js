@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Trending = (props) => {
   const classes = useStyles();
-  const movies = useSelector(selectOriginal);
+  const movies = useSelector(selectTrending);
 
   return (
     <>
